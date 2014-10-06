@@ -21,6 +21,10 @@
 		9AB50A6519E30A4900BAEEE1 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9AB50A4719E30A4900BAEEE1 /* UIKit.framework */; };
 		9AB50A6D19E30A4900BAEEE1 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9AB50A6B19E30A4900BAEEE1 /* InfoPlist.strings */; };
 		9AB50A6F19E30A4900BAEEE1 /* Overdue_Task_List_AssignmentTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AB50A6E19E30A4900BAEEE1 /* Overdue_Task_List_AssignmentTests.m */; };
+		9AB50A7A19E30DCD00BAEEE1 /* AddTaskViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AB50A7919E30DCD00BAEEE1 /* AddTaskViewController.m */; };
+		9AB50A7D19E30DDE00BAEEE1 /* DetailTaskViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AB50A7C19E30DDE00BAEEE1 /* DetailTaskViewController.m */; };
+		9AB50A8019E30DEB00BAEEE1 /* EditTaskViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AB50A7F19E30DEB00BAEEE1 /* EditTaskViewController.m */; };
+		9AB50A8319E30E0D00BAEEE1 /* Task.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AB50A8219E30E0D00BAEEE1 /* Task.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +57,14 @@
 		9AB50A6A19E30A4900BAEEE1 /* Overdue Task List AssignmentTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Overdue Task List AssignmentTests-Info.plist"; sourceTree = "<group>"; };
 		9AB50A6C19E30A4900BAEEE1 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		9AB50A6E19E30A4900BAEEE1 /* Overdue_Task_List_AssignmentTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Overdue_Task_List_AssignmentTests.m; sourceTree = "<group>"; };
+		9AB50A7819E30DCD00BAEEE1 /* AddTaskViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddTaskViewController.h; sourceTree = "<group>"; };
+		9AB50A7919E30DCD00BAEEE1 /* AddTaskViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddTaskViewController.m; sourceTree = "<group>"; };
+		9AB50A7B19E30DDE00BAEEE1 /* DetailTaskViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailTaskViewController.h; sourceTree = "<group>"; };
+		9AB50A7C19E30DDE00BAEEE1 /* DetailTaskViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailTaskViewController.m; sourceTree = "<group>"; };
+		9AB50A7E19E30DEB00BAEEE1 /* EditTaskViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditTaskViewController.h; sourceTree = "<group>"; };
+		9AB50A7F19E30DEB00BAEEE1 /* EditTaskViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditTaskViewController.m; sourceTree = "<group>"; };
+		9AB50A8119E30E0D00BAEEE1 /* Task.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Task.h; sourceTree = "<group>"; };
+		9AB50A8219E30E0D00BAEEE1 /* Task.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Task.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,7 +129,14 @@
 				9AB50A5519E30A4900BAEEE1 /* Main.storyboard */,
 				9AB50A5819E30A4900BAEEE1 /* ViewController.h */,
 				9AB50A5919E30A4900BAEEE1 /* ViewController.m */,
+				9AB50A7819E30DCD00BAEEE1 /* AddTaskViewController.h */,
+				9AB50A7919E30DCD00BAEEE1 /* AddTaskViewController.m */,
+				9AB50A7B19E30DDE00BAEEE1 /* DetailTaskViewController.h */,
+				9AB50A7C19E30DDE00BAEEE1 /* DetailTaskViewController.m */,
+				9AB50A7E19E30DEB00BAEEE1 /* EditTaskViewController.h */,
+				9AB50A7F19E30DEB00BAEEE1 /* EditTaskViewController.m */,
 				9AB50A5B19E30A4900BAEEE1 /* Images.xcassets */,
+				9AB50A8419E30E1500BAEEE1 /* Models */,
 				9AB50A4A19E30A4900BAEEE1 /* Supporting Files */,
 			);
 			path = "Overdue Task List Assignment";
@@ -150,6 +169,15 @@
 				9AB50A6B19E30A4900BAEEE1 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		9AB50A8419E30E1500BAEEE1 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				9AB50A8119E30E0D00BAEEE1 /* Task.h */,
+				9AB50A8219E30E0D00BAEEE1 /* Task.m */,
+			);
+			name = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -249,9 +277,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9AB50A8319E30E0D00BAEEE1 /* Task.m in Sources */,
 				9AB50A5A19E30A4900BAEEE1 /* ViewController.m in Sources */,
+				9AB50A7A19E30DCD00BAEEE1 /* AddTaskViewController.m in Sources */,
 				9AB50A5419E30A4900BAEEE1 /* AppDelegate.m in Sources */,
+				9AB50A8019E30DEB00BAEEE1 /* EditTaskViewController.m in Sources */,
 				9AB50A5019E30A4900BAEEE1 /* main.m in Sources */,
+				9AB50A7D19E30DDE00BAEEE1 /* DetailTaskViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
