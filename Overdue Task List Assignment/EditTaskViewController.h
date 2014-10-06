@@ -6,9 +6,9 @@
 //  Copyright (c) 2014 Jose Manuel Ramírez Martínez. All rights reserved.
 //
 
-#import "ViewController.h"
+#import <UIKit/UIKit.h>
 
-@interface EditTaskViewController : ViewController
+@interface EditTaskViewController : UIViewController
 
 @property (strong, nonatomic) IBOutlet UITextField *textField;
 @property (strong, nonatomic) IBOutlet UITextView *textView;

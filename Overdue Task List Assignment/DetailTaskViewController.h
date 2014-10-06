@@ -6,9 +6,9 @@
 //  Copyright (c) 2014 Jose Manuel Ramírez Martínez. All rights reserved.
 //
 
-#import "ViewController.h"
+#import <UIKit/UIKit.h>
 
-@interface DetailTaskViewController : ViewController
+@interface DetailTaskViewController : UIViewController
 
 @property (strong, nonatomic) IBOutlet UILabel *titleLabel;
 @property (strong, nonatomic) IBOutlet UILabel *dateLabel;

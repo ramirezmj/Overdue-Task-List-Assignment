@@ -6,9 +6,19 @@
 //  Copyright (c) 2014 Jose Manuel Ramírez Martínez. All rights reserved.
 //
 
-#import "ViewController.h"
+#import <UIKit/UIKit.h>
+#import "Task.h"
 
-@interface AddTaskViewController : ViewController
+@protocol AddTaskViewControllerDelegate <NSObject>
+
+- (void)didCancel;
+- (void)didAddTask:(Task *)task;
+
+@end
+
+@interface AddTaskViewController : UIViewController
+
+@property (weak, nonatomic) id <AddTaskViewControllerDelegate> delegate;
 
 @property (strong, nonatomic) IBOutlet UITextField *textField;
 @property (strong, nonatomic) IBOutlet UITextView *textView;
