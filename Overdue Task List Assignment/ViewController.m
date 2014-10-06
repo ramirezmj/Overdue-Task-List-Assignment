@@ -50,6 +50,7 @@
         NSIndexPath *path = sender;
         Task *taskObject = self.taskObjects[path.row];
         detailTaskViewController.task = taskObject;
+        detailTaskViewController.delegate = self;
     }
         
 }
@@ -96,6 +97,14 @@
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
+#pragma mark - DetailTaskViewControllerDelegate
+
+- (void)updateTask
+{
+    [self saveTasks];
+    [self.tableView reloadData];
+}
+
 #pragma mark - Helper Methods
 
 - (NSDictionary *)taskObjectAsAPropertyList:(Task *)taskObject
@@ -137,6 +146,18 @@
     [[NSUserDefaults standardUserDefaults] synchronize];
     
     [self.tableView reloadData];
+}
+
+- (void)saveTasks
+{
+    NSMutableArray *taskObjectsAsPropertyLists = [[NSMutableArray alloc] init];
+    
+    for ( int i = 0; i < [self.taskObjects count]; i++ ) {
+        [taskObjectsAsPropertyLists addObject:[self taskObjectAsAPropertyList:self.taskObjects[i]]];
+    }
+    [[NSUserDefaults standardUserDefaults] setObject:taskObjectsAsPropertyLists forKey:TASK_OBJECTS_KEY];
+    [[NSUserDefaults standardUserDefaults] synchronize];
+         
 }
 
 #pragma mark - UITableViewDataSource
@@ -221,6 +242,7 @@
     Task *taskObject = self.taskObjects[sourceIndexPath.row];
     [self.taskObjects removeObjectAtIndex:sourceIndexPath.row];
     [self.taskObjects insertObject:taskObject atIndex:destinationIndexPath.row];
+    [self saveTasks];
 }
 
 @end

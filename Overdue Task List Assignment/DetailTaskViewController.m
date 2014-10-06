@@ -42,7 +42,7 @@
     // Dispose of any resources that can be recreated.
 }
 
-/*
+
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
@@ -50,9 +50,34 @@
 {
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
+    if ( [segue.destinationViewController isKindOfClass:[EditTaskViewController class]] ) {
+        EditTaskViewController *editTaskViewController = segue.destinationViewController;
+        editTaskViewController.task = self.task;
+        editTaskViewController.delegate = self;
+    }
+    
 }
-*/
 
-- (IBAction)editBarButtonItemPressed:(UIBarButtonItem *)sender {
+
+- (IBAction)editBarButtonItemPressed:(UIBarButtonItem *)sender
+{
+    [self performSegueWithIdentifier:@"toEditTaskViewControllerSegue" sender:nil];
 }
+
+- (void)didUpdateTask
+{
+    self.titleLabel.text = self.task.title;
+    self.detailLabel.text = self.task.description;
+    
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    [formatter setDateFormat:@"dd-MM-yyyy"];
+    NSString *stringFromDate = [formatter stringFromDate:self.task.date];
+    
+    self.dateLabel.text = stringFromDate;
+    
+    [self.navigationController popViewControllerAnimated:YES];
+    
+    [self.delegate updateTask];
+}
+
 @end
