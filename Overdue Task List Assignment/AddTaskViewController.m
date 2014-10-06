@@ -27,6 +27,8 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    self.textField.delegate = self;
+    self.textView.delegate = self;
 }
 
 - (void)didReceiveMemoryWarning
@@ -66,4 +68,22 @@
 {
     [self.delegate didCancel];
 }
+
+#pragma mark - UITextFieldDelegate
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField
+{
+    [self.textField resignFirstResponder];
+    return YES;
+}
+
+- (BOOL)textView:(UITextView *)textView shouldChangeTextInRange:(NSRange)range replacementText:(NSString *)text
+{
+    if ( [text isEqualToString:@"\n"] ) {
+        [self.textView resignFirstResponder];
+        return NO;
+    }
+    return YES;
+}
+
 @end
